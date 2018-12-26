@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: ..
   specs:
     ordy (0.0.0)
       actionview (>= 4.0.0)
@@ -8,19 +8,19 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    actionview (5.2.1.1)
-      activesupport (= 5.2.1.1)
+    actionview (5.2.0)
+      activesupport (= 5.2.0)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    activemodel (5.2.1.1)
-      activesupport (= 5.2.1.1)
-    activerecord (5.2.1.1)
-      activemodel (= 5.2.1.1)
-      activesupport (= 5.2.1.1)
+    activemodel (5.2.0)
+      activesupport (= 5.2.0)
+    activerecord (5.2.0)
+      activemodel (= 5.2.0)
+      activesupport (= 5.2.0)
       arel (>= 9.0)
-    activesupport (5.2.1.1)
+    activesupport (5.2.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -54,7 +54,7 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    rake (12.3.1)
+    rake (12.3.2)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -78,6 +78,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionview (= 5.2.0)
+  activerecord (= 5.2.0)
   appraisal
   bundler
   ordy!

@@ -1,22 +1,22 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.0.0
   - 2.1.2
   - 2.2.5
   - 2.3.1
   - 2.3.4
   - 2.4.1
 gemfile:
-  - gemfiles/activerecord_4.gemfile
-  - gemfiles/activerecord_5.gemfile
+  - gemfiles/rails_4.gemfile
+  - gemfiles/rails_5_0.gemfile
+  - gemfiles/rails_5_2.gemfile
 script:
   - bundle exec rake spec
 before_install:
   - gem install bundler
 matrix:
   exclude:
-  - rvm: 2.0.0
-    gemfile: gemfiles/activerecord_5.gemfile
   - rvm: 2.1.2
-    gemfile: gemfiles/activerecord_5.gemfile
+    gemfile: gemfiles/rails_5_0.gemfile
+  - rvm: 2.1.2
+    gemfile: gemfiles/rails_5_2.gemfile

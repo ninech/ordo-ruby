@@ -1,3 +1,3 @@
-source 'https://rubygems.nine.ch'
+source 'https://rubygems.org'
 
 gemspec
