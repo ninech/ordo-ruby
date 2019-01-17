@@ -4,10 +4,6 @@ module Ordy
   module Helpers
     module ActionView
       module OrderableLinkHelper
-        DOWN_ICON = 'caret-down'
-        UP_ICON = 'caret-up'
-        SORT_ICON = 'sort'
-        INACTIVE_ICON = 'inactive-order-icon'
         ORDER_ASC = 'asc'
         ORDER_DESC = 'desc'
 
@@ -32,7 +28,7 @@ module Ordy
                       end
 
           title = "#{title} #{icon_html}".html_safe
-          url_params = request_params.merge(order_by: order_by, direction: direction)
+          url_params = request_params.merge(order_by: "#{order_by}-#{direction}")
 
           link_to(title, url_params)
         end
@@ -45,9 +41,9 @@ module Ordy
         # @return [String]
         def icon(direction = nil)
           icon, html_class = if direction.nil?
-                               [SORT_ICON, class: INACTIVE_ICON]
+                               [config.icon.sort, class: config.icon.inactive]
                              else
-                               [direction == ORDER_DESC ? UP_ICON : DOWN_ICON, nil]
+                               [direction == ORDER_DESC ? config.icon.up : config.icon.down, nil]
                              end
           icon_class = "fa-#{icon}"
 

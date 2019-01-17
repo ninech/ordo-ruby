@@ -64,6 +64,12 @@ def drop_db
 end
 
 class Comment < ActiveRecord::Base
+  include Ordy::Orm::ActiveRecord::Orderable
+
+  orderable_by do
+
+  end
+
   belongs_to :user
 end
 
@@ -79,6 +85,10 @@ class User < ActiveRecord::Base
 
     query :custom_query do |scope, args|
       scope.where('email LIKE \'%example%\'',).order(id: args.fetch(:direction))
+    end
+
+    default do
+      order_by_specified(:state).order_by(:name)
     end
   end
 end
