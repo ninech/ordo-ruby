@@ -35,10 +35,14 @@ __Code usage__
 ```rb
 # order by columns
 User.order_by(name: :asc)
+# or
+User.order_by('name-asc')
 
 # order by multiple columns
 User.order_by(name: :asc, email: :desc) 
- 
+# or
+User.order_by(name: :asc).order_by(email: :desc)
+
 # order by association column
 User.order_by(user: :asc)
 
@@ -49,7 +53,9 @@ User.order_by_specified(:state)
 User.order_by(custom_query: :asc)
 
 # default ordering
-User.order_by('') # same as User.order_by(nil)
+User.order_by('') 
+# or
+User.order_by(nil)
 
 # ordering by more than one criteria
 User.order_by(email: :asc, state: :desc)

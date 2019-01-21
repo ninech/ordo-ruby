@@ -14,7 +14,9 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'http://github.com/ninech/'
   spec.license     = 'MIT'
 
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.files         = `git ls-files`.split("\n")
+  spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
   spec.required_ruby_version = '>= 2.0.0'
