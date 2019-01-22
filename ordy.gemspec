@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version     = '0.0.0'
   spec.date        = '2018-11-23'
   spec.summary     = 'Simple sorting gem'
-  spec.description = 'Ordy simple sorting gem for RubyObject\'s and ORM\'s '
+  spec.description = 'Simple sorting gem for RubyObject\'s and ORM\'s '
   spec.authors     = ['nine.ch Development-Team']
   spec.email       = 'development@nine.ch'
   spec.files       = ['lib/ordy.rb']

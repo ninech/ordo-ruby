@@ -124,21 +124,18 @@ module Ordy
             #
             # @param [Hash] order_query
             def order_by(order_query = nil)
-              if order_query.nil? || order_query.blank?
-                return default_order
-              elsif order_query.is_a?(Symbol)
-                return default_order(order_query)
-              end
+              return default_order              if order_query.nil? || order_query.blank?
+              return default_order(order_query) if order_query.is_a?(Symbol)
 
-              specs = if order_query.is_a?(String)
-                        parse_order_query(order_query)
-                      elsif order_query.is_a?(Hash)
-                        order_query.symbolize_keys.map do |(orderable, direction)|
-                          { orderable: orderable, direction: direction }
-                        end
+
+              specs = case order_query
+                      when String then parse_order_query(order_query)
+                      when Hash   then parse_order_hash(order_query)
+                      else
+                        []
                       end
 
-              return default_order(nil) if specs.blank?
+              return default_order if specs.blank?
 
               scope = default_scope
 
@@ -166,7 +163,14 @@ module Ordy
 
             private
 
+            # @param [Hash] order_query
+            # # @return [Array][Hash]
+            def parse_order_hash(order_query)
+              order_query.symbolize_keys.map { |(orderable, direction)| { orderable: orderable, direction: direction } }
+            end
+
             # @param [String] order_query
+            # @return [Array][Hash]
             def parse_order_query(order_query)
               orderable, direction = order_query.to_s.split(DELIMITER).map(&:to_s).map(&:strip)
               direction = 'asc' unless %w(desc asc).include?(direction)
