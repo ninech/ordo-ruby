@@ -20,11 +20,11 @@ class User < ApplicationRecord
     associations comments: :scripts
     
     # sort by specified order
-    specified(state: %w(new pendinguser migrating failed))
+    specified(state: %w(new, pending, active, removed))
     
     # custom query
-    query :users do |scope, args|
-      scope.where(...).order(field: args[:direction])
+    query :custom_query do |scope, args|
+      scope.where(name: 'example').order(email: args[:direction])
     end
   end
 end
@@ -44,7 +44,7 @@ User.order_by(name: :asc, email: :desc)
 User.order_by(name: :asc).order_by(email: :desc)
 
 # order by association column
-User.order_by(user: :asc)
+User.order_by(comments: :asc)
 
 # order by specified column values
 User.order_by_specified(:state)
