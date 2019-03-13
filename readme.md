@@ -118,3 +118,21 @@ bundle exec appraisal rails-4 rspec
 # run tests for rails 5 env
 bundle exec appraisal rails-5 rspec
 ```
+
+# Contributing
+Bug reports and pull requests are very welcome [on GitHub](https://github.com/ninech/ordy).
+
+Before opening a PR, please
+
+extend the existing specs
+- run rspec
+- run rubocop and fix your warnings
+- check if this README.md file needs adjustments
+
+#License
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+# About
+This gem is currently maintained and funded by [nine](https://www.nine.ch/de/home).
+
+[![logo of the company 'nine'](https://logo.apps.at-nine.ch/Dmqied_eSaoBMQwk3vVgn4UIgDo=/trim/500x0/logo_claim.png)](https://www.nine.ch)
