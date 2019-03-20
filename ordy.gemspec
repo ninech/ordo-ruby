@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name        = 'ordy'
-  spec.version     = '0.0.0'
+  spec.version     = File.read('VERSION')
   spec.date        = '2018-11-23'
   spec.summary     = 'Simple sorting gem'
   spec.description = 'Simple sorting gem for RubyObject\'s and ORM\'s '
