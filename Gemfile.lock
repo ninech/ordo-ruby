@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ordy (1.1.1)
+    ordy (1.1.0)
       actionview (>= 4.0.0)
       activerecord (>= 4.0.0)
 

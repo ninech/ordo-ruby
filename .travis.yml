@@ -35,6 +35,5 @@ deploy:
     on:
       tags: true
       repo: ninech/ordy
-      branch: master
       condition: "$TRAVIS_RUBY_VERSION == 2.4.1"
     skip_cleanup: true
