@@ -13,9 +13,8 @@ gemfile:
 script:
   - bundle exec rake
 before_install:
-  - gem update --system
-  - gem update bundler
   - gem cleanup bundler
+  - gem install bundler
 matrix:
   exclude:
   - rvm: 2.1.2
