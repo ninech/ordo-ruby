@@ -11,10 +11,10 @@ gemfile:
   - gemfiles/rails_5_0.gemfile
   - gemfiles/rails_5_2.gemfile
 script:
-  - bundle exec rake
+  - bundle exec rake spec
 before_install:
   - gem cleanup bundler
-  - gem install bundler
+  - gem install bundler -v 1.17.3
 matrix:
   exclude:
   - rvm: 2.1.2
