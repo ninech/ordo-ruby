@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    ordy (0.0.0)
+    ordy (1.1.0)
       actionview (>= 4.0.0)
       activerecord (>= 4.0.0)
 
@@ -32,7 +32,7 @@ GEM
     arel (7.1.4)
     builder (3.2.3)
     coderay (1.1.2)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.5)
     crass (1.0.4)
     diff-lcs (1.3)
     erubis (2.7.0)
@@ -44,7 +44,7 @@ GEM
     method_source (0.9.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    nokogiri (1.9.1)
+    nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -85,7 +85,7 @@ DEPENDENCIES
   ordy!
   pry
   rspec
-  sqlite3
+  sqlite3 (<= 1.3.13)
 
 BUNDLED WITH
-   1.3.0
+   1.15.4

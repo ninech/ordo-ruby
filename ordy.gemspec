@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'sqlite3', '<=1.3.13'
   spec.add_development_dependency 'appraisal'
 
   spec.add_runtime_dependency 'activerecord', '>= 4.0.0'
